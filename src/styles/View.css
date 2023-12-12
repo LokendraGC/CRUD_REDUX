@@ -1,0 +1,41 @@
+.view_container{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    width: 100vw;
+    height: 100vh;
+    background-color:black;
+    z-index: 99;
+    opacity: 0.8;
+}
+
+.view_cart{
+    height: 40%;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.close_btn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.view_item{
+    padding-bottom: 4px;
+}

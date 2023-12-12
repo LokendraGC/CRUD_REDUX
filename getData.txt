@@ -1,0 +1,51 @@
+import React from "react";
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllData } from "./features/gitUserSlice";
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  const handleCLick = () => {
+    dispatch(getAllData());
+  };
+  const data = useSelector((state) => {
+    console.log("state", state.app);
+    return state.app;
+  });
+
+  console.log(data)
+  if(data.loading===true){
+    return <h1>Loading...</h1>
+  }
+
+  if(data.error){
+    return <h1>Error: {data.error}</h1>
+  }
+
+  return (
+    <div className="container">
+      <h1>Hello</h1>
+      <button onClick={handleCLick}>Get all github users</button>
+      {data.users.map((user) => (
+        <li key={user.id}>{user.login}</li>
+      ))}
+    </div>
+  );
+};
+
+export default App;
+
+
+ <div className="cart">
+            {
+                user.map((ele)=>(
+            <div className='cart_items' key={ele.id}>
+            <p className='cart_title'>Title: {ele.name}</p>
+            <p className='cart_title'>Email: {ele.email}</p>
+            <p className='cart_title'>Password: {ele.password}</p>
+            <p className='cart_title'>Type: {ele.type}</p>
+            </div>
+                ))
+                }
+        </div>
