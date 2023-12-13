@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { searchData } from "../features/gitUserSlice";
 
 const Navbar = () => {
 
   const allUser = useSelector(state=>state.app.user)
   console.log(allUser);
+
+  const dispatch = useDispatch();
+
+
+   const [searchUser, setSearchUser] = useState("");
+
+   useEffect(() => {
+    dispatch(searchData(searchUser))
+    console.log(searchUser)
+  }, [searchUser]);
 
   return (
     <div className="container">
@@ -18,7 +29,7 @@ const Navbar = () => {
         </ul>
 
         <form className="nav">
-          <input className="input_field" type="text" placeholder="search" />
+          <input className="input_field" type="text" placeholder="search" onChange={(e)=>setSearchUser(e.target.value)}/>
         </form>
 
       </div>

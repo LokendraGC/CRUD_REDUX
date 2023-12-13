@@ -64,5 +64,13 @@
     border-bottom: 1px solid red;
   }
 
+.radio_btns{
+  margin-top: 20px;
+  margin-left: 40px;
+ 
+}
 
-
+.rdInput{
+  margin-left: 10px;
+  cursor: pointer;
+}
